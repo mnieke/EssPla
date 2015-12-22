@@ -180,7 +180,6 @@ public class WeekFragment extends Fragment implements View.OnClickListener, Popu
         }
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -211,101 +210,114 @@ public class WeekFragment extends Fragment implements View.OnClickListener, Popu
     @Override
     public void mealSelected(String newMeal) {
 
-            DataHolder dataHolder = DataHolder.getInstance();
-            DatabaseEntry entry = null;
-            EssPlaDataSource dataSource = new EssPlaDataSource(getActivity());
-            dataSource.open();
 
 
-//            GregorianCalendar calendar = (GregorianCalendar) startDate.clone();
-//
-//            if(buttonSelected.getId() == imageButtonMondayMorning.getId()) {
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonMondayNoon.getId()) {
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
-//            } else if(buttonSelected.getId() == imageButtonMondayEvening.getId()) {
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonTuesdayMorning.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 1);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonTuesdayNoon.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 1);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
-//            } else if(buttonSelected.getId() == imageButtonTuesdayEvening.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 1);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonWednesdayMorning.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 2);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonWednesdayNoon.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 2);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
-//            } else if(buttonSelected.getId() == imageButtonWednesdayEvening.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 2);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonThursdayMorning.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 3);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonThursdayNoon.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 3);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
-//            } else if(buttonSelected.getId() == imageButtonThursdayEvening.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 3);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonFridayMorning.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 4);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonFridayNoon.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 4);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
-//            } else if(buttonSelected.getId() == imageButtonFridayEvening.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 4);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonSaturdayMorning.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 5);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonSaturdayNoon.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 5);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
-//            } else if(buttonSelected.getId() == imageButtonSaturdayEvening.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 5);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonSundayMorning.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 6);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
-//            } else if(buttonSelected.getId() == imageButtonSundayNoon.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 6);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
-//            } else if(buttonSelected.getId() == imageButtonSundayEvening.getId()) {
-//                calendar.add(Calendar.DAY_OF_MONTH, 6);
-//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
-//                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
-//            }
+
+        DataHolder dataHolder = DataHolder.getInstance();
+        DatabaseEntry entry = null;
+        EssPlaDataSource dataSource = new EssPlaDataSource(getActivity());
+        dataSource.open();
 
 
-            dataSource.close();
-            buttonSelected = null;
-            updateEntries();
+        GregorianCalendar calendar = (GregorianCalendar) startDate.clone();
+
+        MealTime mealTime = null;
+
+        if(buttonSelected.getId() == textViewMondayBreakfast.getId()) {
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.BREAKFAST);
+            mealTime = MealTime.BREAKFAST;
+        } else if(buttonSelected.getId() == textViewMondayLunch.getId()) {
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.LUNCH);
+            mealTime = MealTime.LUNCH;
+        } else if(buttonSelected.getId() == textViewMondayDinner.getId()) {
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.DINNER);
+            mealTime = MealTime.DINNER;
+        }
+        else if(buttonSelected.getId() == textViewTuesdayBreakfast.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 1);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.BREAKFAST);
+            mealTime = MealTime.BREAKFAST;
+        } else if(buttonSelected.getId() == textViewTuesdayLunch.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 1);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.LUNCH);
+            mealTime = MealTime.LUNCH;
+        } else if(buttonSelected.getId() == textViewTuesdayDinner.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 1);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.DINNER);
+            mealTime = MealTime.DINNER;
+        }
+        else if(buttonSelected.getId() == textViewWednesdayBreakfast.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 2);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.BREAKFAST);
+            mealTime = MealTime.BREAKFAST;
+        } else if(buttonSelected.getId() == textViewWednesdayLunch.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 2);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.LUNCH);
+            mealTime = MealTime.LUNCH;
+        } else if(buttonSelected.getId() == textViewWednesdayDinner.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 2);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.DINNER);
+            mealTime = MealTime.DINNER;
+        }
+        else if(buttonSelected.getId() == textViewThursdayBreakfast.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 3);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.BREAKFAST);
+            mealTime = MealTime.BREAKFAST;
+        } else if(buttonSelected.getId() == textViewThursdayLunch.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 3);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.LUNCH);
+            mealTime = MealTime.LUNCH;
+        } else if(buttonSelected.getId() == textViewThursdayDinner.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 3);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.DINNER);
+            mealTime = MealTime.DINNER;
+        }
+        else if(buttonSelected.getId() == textViewFridayBreakfast.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 4);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.BREAKFAST);
+            mealTime = MealTime.BREAKFAST;
+        } else if(buttonSelected.getId() == textViewFridayLunch.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 4);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.LUNCH);
+            mealTime = MealTime.LUNCH;
+        } else if(buttonSelected.getId() == textViewFridayDinner.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 4);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.DINNER);
+            mealTime = MealTime.DINNER;
+        }
+        else if(buttonSelected.getId() == textViewSaturdayBreakfast.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 5);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.BREAKFAST);
+            mealTime = MealTime.BREAKFAST;
+        } else if(buttonSelected.getId() == textViewSaturdayLunch.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 5);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.LUNCH);
+            mealTime = MealTime.LUNCH;
+        } else if(buttonSelected.getId() == textViewSaturdayDinner.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 5);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.DINNER);
+            mealTime = MealTime.DINNER;
+        }
+        else if(buttonSelected.getId() == textViewSundayBreakfast.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 6);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.BREAKFAST);
+            mealTime = MealTime.BREAKFAST;
+        } else if(buttonSelected.getId() == textViewSundayLunch.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 6);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.LUNCH);
+            mealTime = MealTime.LUNCH;
+        } else if(buttonSelected.getId() == textViewSundayDinner.getId()) {
+            calendar.add(Calendar.DAY_OF_MONTH, 6);
+            entry = dataHolder.findEntryByCalendar(calendar, MealTime.DINNER);
+            mealTime = MealTime.DINNER;
+        }
+
+        dataSource.setMealForEntry(entry, newMeal, mealTime, calendar);
+
+
+        dataSource.close();
+        buttonSelected = null;
+        updateEntries();
 
         closePopup();
     }

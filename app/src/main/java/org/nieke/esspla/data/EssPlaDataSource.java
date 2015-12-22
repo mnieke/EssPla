@@ -129,7 +129,7 @@ public class EssPlaDataSource {
             deleteEntry(entry);
             dataHolder.getEntryList().remove(entry);
 
-            if(meal != "") {
+            if(!meal.equals("")) {
                 DatabaseEntry newEntry = createEntry(entry.getDate(), entry.getMealTime(), meal);
 
                 if(newEntry != null) {
@@ -138,7 +138,7 @@ public class EssPlaDataSource {
             }
 
 
-        } else if(entry == null && meal != "") {
+        } else if(entry == null && !meal.equals("")) {
             DatabaseEntry newEntry = createEntry(calendar, time, meal);
 
             if(newEntry != null) {
