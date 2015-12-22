@@ -1,13 +1,430 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.nieke.esspla.fragments.WeekFragment">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".HuPlaActivity$PlaceholderFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_span="4">
 
-</FrameLayout>
+        <ImageButton
+            android:id="@+id/image_button_previous_week"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_action_previous_item" />
+
+
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:id="@+id/button_current_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Aktuelle Woche" />
+
+
+        <ImageButton
+            android:id="@+id/image_button_next_week"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_action_next_item" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:shrinkColumns="*"
+            android:stretchColumns="*"
+            tools:context=".HuPlaActivity$PlaceholderFragment">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="10dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"></View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/label_breakfast" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/label_lunch" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/label_dinner" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"
+                    android:text="@string/monday" />
+
+                <TextView
+                    android:id="@+id/text_view_mon_breakfast"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_mon_lunch"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_mon_dinner"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"
+                    android:text="@string/tuesday" />
+
+
+                <TextView
+                    android:id="@+id/text_view_tue_breakfast"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_tue_lunch"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_tue_dinner"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"
+                    android:text="@string/wednesday" />
+
+
+                <TextView
+                    android:id="@+id/text_view_wed_breakfast"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_wed_lunch"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_wed_dinner"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"
+                    android:text="@string/thursday" />
+
+
+                <TextView
+                    android:id="@+id/text_view_thu_breakfast"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_thu_lunch"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_thu_dinner"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"
+                    android:text="@string/friday" />
+
+
+                <TextView
+                    android:id="@+id/text_view_fri_breakfast"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_fri_lunch"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_fri_dinner"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"
+                    android:text="@string/saturday" />
+
+
+                <TextView
+                    android:id="@+id/text_view_sat_breakfast"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_sat_lunch"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_sat_dinner"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"
+                    android:text="@string/sunday" />
+
+
+                <TextView
+                    android:id="@+id/text_view_sun_breakfast"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_sun_lunch"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+
+                <TextView
+                    android:id="@+id/text_view_sun_dinner"
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/text_view_height"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="@string/missing_meal"
+                    android:textColor="@color/meal_needed_red"/>
+            </TableRow>
+
+
+        </TableLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
