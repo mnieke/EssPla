@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -22,6 +23,8 @@ import java.util.List;
 public class EssPlaActivity extends AppCompatActivity {
 
     private final static int PAGE_COUNT = 1;
+
+    private WeekFragment weekFragment;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -86,6 +89,21 @@ public class EssPlaActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+            boolean onePopupOpened = false;
+
+            if(weekFragment != null && weekFragment.isPopupOpened()) {
+                onePopupOpened = true;
+                weekFragment.closePopup();
+                return true;
+            }
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -104,9 +122,11 @@ public class EssPlaActivity extends AppCompatActivity {
 
             switch(position) {
                 case 0:
-                    return WeekFragment.newInstance();
+                    weekFragment = WeekFragment.newInstance();
+                    return weekFragment;
                 default:
-                    return WeekFragment.newInstance();
+                    weekFragment = WeekFragment.newInstance();
+                    return weekFragment;
             }
         }
 
