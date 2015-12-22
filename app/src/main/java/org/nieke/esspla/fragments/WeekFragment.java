@@ -22,8 +22,10 @@ import org.nieke.esspla.data.DatabaseEntry;
 import org.nieke.esspla.data.EssPlaDataSource;
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,7 +35,7 @@ import java.util.GregorianCalendar;
  * Use the {@link WeekFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class WeekFragment extends Fragment implements View.OnClickListener, PopupMealListener {
+public class WeekFragment extends Fragment implements View.OnClickListener, PopupMealListener, PopupWindow.OnDismissListener {
 
     private View rootView;
 
@@ -66,12 +68,15 @@ public class WeekFragment extends Fragment implements View.OnClickListener, Popu
     private TextView textViewSundayLunch;
     private TextView textViewSundayDinner;
 
+    private List<TextView> textViews;
+
     private View buttonSelected;
 
     protected boolean isPopupOpened = false;
     protected PopupWindow popupWindow;
 
     public WeekFragment() {
+        textViews = new ArrayList<TextView>();
         // Required empty public constructor
     }
 
@@ -105,59 +110,72 @@ public class WeekFragment extends Fragment implements View.OnClickListener, Popu
 
 
         textViewMondayBreakfast = (TextView) rootView.findViewById(R.id.text_view_mon_breakfast);
-        textViewMondayBreakfast.setOnClickListener(this);
+        textViews.add(textViewMondayBreakfast);
         textViewMondayLunch = (TextView) rootView.findViewById(R.id.text_view_mon_lunch);
-        textViewMondayLunch.setOnClickListener(this);
+        textViews.add(textViewMondayLunch);
         textViewMondayDinner = (TextView) rootView.findViewById(R.id.text_view_mon_dinner);
-        textViewMondayDinner.setOnClickListener(this);
+        textViews.add(textViewMondayDinner);
 
         textViewTuesdayBreakfast = (TextView) rootView.findViewById(R.id.text_view_tue_breakfast);
-        textViewTuesdayBreakfast.setOnClickListener(this);
+        textViews.add(textViewTuesdayBreakfast);
         textViewTuesdayLunch = (TextView) rootView.findViewById(R.id.text_view_tue_lunch);
-        textViewTuesdayLunch.setOnClickListener(this);
+        textViews.add(textViewTuesdayLunch);
         textViewTuesdayDinner = (TextView) rootView.findViewById(R.id.text_view_tue_dinner);
-        textViewTuesdayDinner.setOnClickListener(this);
+        textViews.add(textViewTuesdayDinner);
 
         textViewWednesdayBreakfast = (TextView) rootView.findViewById(R.id.text_view_wed_breakfast);
-        textViewWednesdayBreakfast.setOnClickListener(this);
+        textViews.add(textViewWednesdayBreakfast);
         textViewWednesdayLunch = (TextView) rootView.findViewById(R.id.text_view_wed_lunch);
-        textViewWednesdayLunch.setOnClickListener(this);
+        textViews.add(textViewWednesdayLunch);
         textViewWednesdayDinner = (TextView) rootView.findViewById(R.id.text_view_wed_dinner);
-        textViewWednesdayDinner.setOnClickListener(this);
+        textViews.add(textViewWednesdayDinner);
 
         textViewThursdayBreakfast = (TextView) rootView.findViewById(R.id.text_view_thu_breakfast);
-        textViewThursdayBreakfast.setOnClickListener(this);
+        textViews.add(textViewThursdayBreakfast);
         textViewThursdayLunch = (TextView) rootView.findViewById(R.id.text_view_thu_lunch);
-        textViewThursdayLunch.setOnClickListener(this);
+        textViews.add(textViewThursdayLunch);
         textViewThursdayDinner = (TextView) rootView.findViewById(R.id.text_view_thu_dinner);
-        textViewThursdayDinner.setOnClickListener(this);
+        textViews.add(textViewThursdayDinner);
 
         textViewFridayBreakfast = (TextView) rootView.findViewById(R.id.text_view_fri_breakfast);
-        textViewFridayBreakfast.setOnClickListener(this);
+        textViews.add(textViewFridayBreakfast);
         textViewFridayLunch = (TextView) rootView.findViewById(R.id.text_view_fri_lunch);
-        textViewFridayLunch.setOnClickListener(this);
+        textViews.add(textViewFridayLunch);
         textViewFridayDinner = (TextView) rootView.findViewById(R.id.text_view_fri_dinner);
-        textViewFridayDinner.setOnClickListener(this);
+        textViews.add(textViewFridayDinner);
 
         textViewSaturdayBreakfast = (TextView) rootView.findViewById(R.id.text_view_sat_breakfast);
-        textViewSaturdayBreakfast.setOnClickListener(this);
+        textViews.add(textViewSaturdayBreakfast);
         textViewSaturdayLunch = (TextView) rootView.findViewById(R.id.text_view_sat_lunch);
-        textViewSaturdayLunch.setOnClickListener(this);
+        textViews.add(textViewSaturdayLunch);
         textViewSaturdayDinner = (TextView) rootView.findViewById(R.id.text_view_sat_dinner);
-        textViewSaturdayDinner.setOnClickListener(this);
+        textViews.add(textViewSaturdayDinner);
 
         textViewSundayBreakfast = (TextView) rootView.findViewById(R.id.text_view_sun_breakfast);
-        textViewSundayBreakfast.setOnClickListener(this);
+        textViews.add(textViewSundayBreakfast);
         textViewSundayLunch = (TextView) rootView.findViewById(R.id.text_view_sun_lunch);
-        textViewSundayLunch.setOnClickListener(this);
+        textViews.add(textViewSundayLunch);
         textViewSundayDinner = (TextView) rootView.findViewById(R.id.text_view_sun_dinner);
-        textViewSundayDinner.setOnClickListener(this);
+        textViews.add(textViewSundayDinner);
 
+        attachOnClickListenerToTextViews();
 
         resetDate();
         updateCurrentWeekButtonText();
         updateEntries();
         return rootView;
+    }
+
+    private void attachOnClickListenerToTextViews() {
+        for(TextView textView: textViews) {
+            textView.setOnClickListener(this);
+        }
+    }
+
+    private void detachOnClickListenerToTextViews() {
+        for(TextView textView: textViews) {
+            textView.setOnClickListener(null);
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -290,6 +308,11 @@ public class WeekFragment extends Fragment implements View.OnClickListener, Popu
         closePopup();
     }
 
+    @Override
+    public void onDismiss() {
+        closePopup();
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -326,6 +349,8 @@ public class WeekFragment extends Fragment implements View.OnClickListener, Popu
                 break;
             default:
                 if(v instanceof TextView) {
+                    detachOnClickListenerToTextViews();
+
                     TextView textView = (TextView) v;
 
                     LayoutInflater layoutInflater
@@ -342,12 +367,14 @@ public class WeekFragment extends Fragment implements View.OnClickListener, Popu
                     buttonSelected = v;
                     this.popupWindow = popupWindow;
 
+                    popupWindow.setFocusable(true);
+                    popupWindow.update();
+                    popupWindow.setOnDismissListener(this);
+
                     EditText editText = (EditText) popupView.findViewById(R.id.edit_text_popup);
                     editText.setText(textView.getText());
 
                     PopupWindowHandler popupWindowHandler = new PopupWindowHandler(editText, (Button) popupView.findViewById(R.id.button_popup_ok), (Button) popupView.findViewById(R.id.button_popup_cancel), this, textView.getText().toString());
-
-//                    PopupWindowButtonHandler popupWindowButtonHandler = new PopupWindowButtonHandler((android.widget.TableLayout) popupView.findViewById(R.id.table_layout_popup), popupWindow, this);
 
                     popupWindow.showAtLocation(rootView, Gravity.CENTER, 0, 0);
                     isPopupOpened = true;
@@ -404,5 +431,7 @@ public class WeekFragment extends Fragment implements View.OnClickListener, Popu
         isPopupOpened = false;
         if(popupWindow != null && popupWindow.isShowing())
             popupWindow.dismiss();
+
+        attachOnClickListenerToTextViews();
     }
 }
