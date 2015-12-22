@@ -82,67 +82,69 @@ public class WeekFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View v = inflater.inflate(R.layout.fragment_week, container, false);
+        View view = inflater.inflate(R.layout.fragment_week, container, false);
 
-//        rootView = inflater.inflate(R.layout.fragment_week, container, false);
-
-        buttonCurrentWeek = (Button) v.findViewById(R.id.button_current_week);
+        buttonCurrentWeek = (Button) view.findViewById(R.id.button_current_week);
         buttonCurrentWeek.setOnClickListener(this);
 
-        ((ImageButton) v.findViewById(R.id.image_button_next_week)).setOnClickListener(this);
-        ((ImageButton) v.findViewById(R.id.image_button_previous_week)).setOnClickListener(this);
+        ((ImageButton) view.findViewById(R.id.image_button_next_week)).setOnClickListener(this);
+        ((ImageButton) view.findViewById(R.id.image_button_previous_week)).setOnClickListener(this);
 
 
-        textViewMondayBreakfast = (TextView) v.findViewById(R.id.text_view_mon_breakfast);
+        textViewMondayBreakfast = (TextView) view.findViewById(R.id.text_view_mon_breakfast);
         textViewMondayBreakfast.setOnClickListener(this);
-        textViewMondayLunch = (TextView) v.findViewById(R.id.text_view_mon_lunch);
+        textViewMondayLunch = (TextView) view.findViewById(R.id.text_view_mon_lunch);
         textViewMondayLunch.setOnClickListener(this);
-        textViewMondayDinner = (TextView) v.findViewById(R.id.text_view_mon_dinner);
+        textViewMondayDinner = (TextView) view.findViewById(R.id.text_view_mon_dinner);
         textViewMondayDinner.setOnClickListener(this);
 
-        textViewTuesdayBreakfast = (TextView) v.findViewById(R.id.text_view_tue_breakfast);
+        textViewTuesdayBreakfast = (TextView) view.findViewById(R.id.text_view_tue_breakfast);
         textViewTuesdayBreakfast.setOnClickListener(this);
-        textViewTuesdayLunch = (TextView) v.findViewById(R.id.text_view_tue_lunch);
+        textViewTuesdayLunch = (TextView) view.findViewById(R.id.text_view_tue_lunch);
         textViewTuesdayLunch.setOnClickListener(this);
-        textViewTuesdayDinner = (TextView) v.findViewById(R.id.text_view_tue_dinner);
+        textViewTuesdayDinner = (TextView) view.findViewById(R.id.text_view_tue_dinner);
         textViewTuesdayDinner.setOnClickListener(this);
 
-        textViewWednesdayBreakfast = (TextView) v.findViewById(R.id.text_view_wed_breakfast);
+        textViewWednesdayBreakfast = (TextView) view.findViewById(R.id.text_view_wed_breakfast);
         textViewWednesdayBreakfast.setOnClickListener(this);
-        textViewWednesdayLunch = (TextView) v.findViewById(R.id.text_view_wed_lunch);
+        textViewWednesdayLunch = (TextView) view.findViewById(R.id.text_view_wed_lunch);
         textViewWednesdayLunch.setOnClickListener(this);
-        textViewWednesdayDinner = (TextView) v.findViewById(R.id.text_view_wed_dinner);
+        textViewWednesdayDinner = (TextView) view.findViewById(R.id.text_view_wed_dinner);
         textViewWednesdayDinner.setOnClickListener(this);
 
-        textViewThursdayBreakfast = (TextView) v.findViewById(R.id.text_view_thu_breakfast);
+        textViewThursdayBreakfast = (TextView) view.findViewById(R.id.text_view_thu_breakfast);
         textViewThursdayBreakfast.setOnClickListener(this);
-        textViewThursdayLunch = (TextView) v.findViewById(R.id.text_view_thu_lunch);
+        textViewThursdayLunch = (TextView) view.findViewById(R.id.text_view_thu_lunch);
         textViewThursdayLunch.setOnClickListener(this);
-        textViewThursdayDinner = (TextView) v.findViewById(R.id.text_view_thu_dinner);
+        textViewThursdayDinner = (TextView) view.findViewById(R.id.text_view_thu_dinner);
         textViewThursdayDinner.setOnClickListener(this);
 
-        textViewFridayBreakfast = (TextView) v.findViewById(R.id.text_view_fri_breakfast);
+        textViewFridayBreakfast = (TextView) view.findViewById(R.id.text_view_fri_breakfast);
         textViewFridayBreakfast.setOnClickListener(this);
-        textViewFridayLunch = (TextView) v.findViewById(R.id.text_view_fri_lunch);
+        textViewFridayLunch = (TextView) view.findViewById(R.id.text_view_fri_lunch);
         textViewFridayLunch.setOnClickListener(this);
-        textViewFridayDinner = (TextView) v.findViewById(R.id.text_view_fri_dinner);
+        textViewFridayDinner = (TextView) view.findViewById(R.id.text_view_fri_dinner);
         textViewFridayDinner.setOnClickListener(this);
 
-        textViewSaturdayBreakfast = (TextView) v.findViewById(R.id.text_view_sat_breakfast);
+        textViewSaturdayBreakfast = (TextView) view.findViewById(R.id.text_view_sat_breakfast);
         textViewSaturdayBreakfast.setOnClickListener(this);
-        textViewSaturdayLunch = (TextView) v.findViewById(R.id.text_view_sat_lunch);
+        textViewSaturdayLunch = (TextView) view.findViewById(R.id.text_view_sat_lunch);
         textViewSaturdayLunch.setOnClickListener(this);
-        textViewSaturdayDinner = (TextView) v.findViewById(R.id.text_view_sat_dinner);
+        textViewSaturdayDinner = (TextView) view.findViewById(R.id.text_view_sat_dinner);
         textViewSaturdayDinner.setOnClickListener(this);
 
-        textViewSundayBreakfast = (TextView) v.findViewById(R.id.text_view_sun_breakfast);
+        textViewSundayBreakfast = (TextView) view.findViewById(R.id.text_view_sun_breakfast);
         textViewSundayBreakfast.setOnClickListener(this);
-        textViewSundayLunch = (TextView) v.findViewById(R.id.text_view_sun_lunch);
+        textViewSundayLunch = (TextView) view.findViewById(R.id.text_view_sun_lunch);
         textViewSundayLunch.setOnClickListener(this);
-        textViewSundayDinner = (TextView) v.findViewById(R.id.text_view_sun_dinner);
+        textViewSundayDinner = (TextView) view.findViewById(R.id.text_view_sun_dinner);
         textViewSundayDinner.setOnClickListener(this);
 
-        return v;
+
+        resetDate();
+        updateCurrentWeekButtonText();
+        updateEntries();
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -179,7 +181,6 @@ public class WeekFragment extends Fragment implements View.OnClickListener {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 
@@ -230,7 +231,9 @@ public class WeekFragment extends Fragment implements View.OnClickListener {
     private void resetDate() {
         startDate = new GregorianCalendar();
         startDate.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+
         endDate = new GregorianCalendar();
+        endDate.setFirstDayOfWeek(Calendar.MONDAY);
         endDate.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
     }
 
