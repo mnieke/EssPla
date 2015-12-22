@@ -12,7 +12,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-public class EssPlaDatabaseEntryHelper {
+public class EssPlaDataSource {
 
     private SQLiteDatabase database;
     private EssPlaSQLiteHelper dbHelper;
@@ -21,7 +21,7 @@ public class EssPlaDatabaseEntryHelper {
 
     private boolean opened;
 
-    public EssPlaDatabaseEntryHelper(Context context) {
+    public EssPlaDataSource(Context context) {
         dbHelper = new EssPlaSQLiteHelper(context);
         opened = false;
     }
@@ -36,7 +36,7 @@ public class EssPlaDatabaseEntryHelper {
         opened = false;
     }
 
-    public DatabaseEntry createHuPlaEntry(GregorianCalendar calendar, MealTime time, String meal) {
+    public DatabaseEntry createEntry(GregorianCalendar calendar, MealTime time, String meal) {
         if (!opened)
             return null;
 
@@ -44,9 +44,11 @@ public class EssPlaDatabaseEntryHelper {
         String dateString = calendar.get(Calendar.YEAR) + "-" + calendar.get(Calendar.MONTH) + "-" + calendar.get(Calendar.DAY_OF_MONTH);
 
         ContentValues values = new ContentValues();
+
         values.put(EssPlaSQLiteHelper.COLUMN_DATE, dateString);
         values.put(EssPlaSQLiteHelper.COLUMN_TIME, time.toString());
         values.put(EssPlaSQLiteHelper.COLUMN_MEAL, meal);
+
         long insertId = database.insert(EssPlaSQLiteHelper.TABLE_ESSPLA, null, values);
         Cursor cursor = database.query(EssPlaSQLiteHelper.TABLE_ESSPLA, allColumns, EssPlaSQLiteHelper.COLUMN_ID + " = " + insertId, null, null, null, null);
         cursor.moveToFirst();
@@ -55,18 +57,18 @@ public class EssPlaDatabaseEntryHelper {
         return newEntry;
     }
 
-    public boolean deleteHuPlaEntry(DatabaseEntry entry) {
+    public boolean deleteEntry(DatabaseEntry entry) {
         if (!opened)
             return false;
 
         long id = entry.getDatabaseID();
-        System.out.println("HuPlaEntry deleted with id: " + id);
+        System.out.println("DataBaseEntry deleted with id: " + id);
         database.delete(EssPlaSQLiteHelper.TABLE_ESSPLA, EssPlaSQLiteHelper.COLUMN_ID
                 + " = " + id, null);
         return true;
     }
 
-    public List<DatabaseEntry> getAllHuPlaEntries() {
+    public List<DatabaseEntry> getAllEntries() {
         if (!opened)
             return null;
 
@@ -120,15 +122,15 @@ public class EssPlaDatabaseEntryHelper {
         return null;
     }
 
-    public void setHuPlaTypeForEntry(DatabaseEntry entry, String meal, MealTime time, GregorianCalendar calendar) {
+    public void setMealForEntry(DatabaseEntry entry, String meal, MealTime time, GregorianCalendar calendar) {
         DataHolder dataHolder = DataHolder.getInstance();
 
         if(entry != null && !meal.equals(entry.getMeal())) {
-            deleteHuPlaEntry(entry);
+            deleteEntry(entry);
             dataHolder.getEntryList().remove(entry);
 
             if(meal != "") {
-                DatabaseEntry newEntry = createHuPlaEntry(entry.getDate(), entry.getMealTime(), meal);
+                DatabaseEntry newEntry = createEntry(entry.getDate(), entry.getMealTime(), meal);
 
                 if(newEntry != null) {
                     dataHolder.getEntryList().add(newEntry);
@@ -137,7 +139,7 @@ public class EssPlaDatabaseEntryHelper {
 
 
         } else if(entry == null && meal != "") {
-            DatabaseEntry newEntry = createHuPlaEntry(calendar, time, meal);
+            DatabaseEntry newEntry = createEntry(calendar, time, meal);
 
             if(newEntry != null) {
                 dataHolder.getEntryList().add(newEntry);
