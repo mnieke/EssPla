@@ -2,7 +2,6 @@ package org.nieke.esspla.data;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,7 +47,7 @@ public class DataHolder {
      * @param time  Time which the entry should have
      * @return The entry having the specified date and time. May be null if not available
      */
-    public DatabaseEntry findHuPlaEntryByDate(int year, int month, int day, MealTime time) {
+    public DatabaseEntry findEntryByDate(int year, int month, int day, MealTime time) {
         DatabaseEntry huPlaEntry = null;
 
         synchronized (entryList) {
@@ -62,7 +61,7 @@ public class DataHolder {
         return huPlaEntry;
     }
 
-    public DatabaseEntry findHuPlaEntryByCalendar(Calendar calendar, MealTime mealTime) {
-        return findHuPlaEntryByDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), mealTime);
+    public DatabaseEntry findEntryByCalendar(Calendar calendar, MealTime mealTime) {
+        return findEntryByDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), mealTime);
     }
 }

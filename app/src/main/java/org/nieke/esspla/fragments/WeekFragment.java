@@ -1,6 +1,8 @@
 package org.nieke.esspla.fragments;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -20,7 +22,7 @@ import org.nieke.esspla.R;
 import org.nieke.esspla.data.DataHolder;
 import org.nieke.esspla.data.DatabaseEntry;
 import org.nieke.esspla.data.EssPlaDataSource;
-import org.w3c.dom.Text;
+import org.nieke.esspla.data.MealTime;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -218,85 +220,85 @@ public class WeekFragment extends Fragment implements View.OnClickListener, Popu
 //            GregorianCalendar calendar = (GregorianCalendar) startDate.clone();
 //
 //            if(buttonSelected.getId() == imageButtonMondayMorning.getId()) {
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.MORNING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonMondayNoon.getId()) {
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.NOON);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
 //            } else if(buttonSelected.getId() == imageButtonMondayEvening.getId()) {
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.EVENING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonTuesdayMorning.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 1);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.MORNING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonTuesdayNoon.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 1);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.NOON);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
 //            } else if(buttonSelected.getId() == imageButtonTuesdayEvening.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 1);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.EVENING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonWednesdayMorning.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 2);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.MORNING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonWednesdayNoon.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 2);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.NOON);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
 //            } else if(buttonSelected.getId() == imageButtonWednesdayEvening.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 2);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.EVENING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonThursdayMorning.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 3);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.MORNING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonThursdayNoon.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 3);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.NOON);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
 //            } else if(buttonSelected.getId() == imageButtonThursdayEvening.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 3);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.EVENING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonFridayMorning.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 4);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.MORNING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonFridayNoon.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 4);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.NOON);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
 //            } else if(buttonSelected.getId() == imageButtonFridayEvening.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 4);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.EVENING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonSaturdayMorning.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 5);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.MORNING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonSaturdayNoon.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 5);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.NOON);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
 //            } else if(buttonSelected.getId() == imageButtonSaturdayEvening.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 5);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.EVENING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonSundayMorning.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 6);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.MORNING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.MORNING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.MORNING, calendar);
 //            } else if(buttonSelected.getId() == imageButtonSundayNoon.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 6);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.NOON);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.NOON);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.NOON, calendar);
 //            } else if(buttonSelected.getId() == imageButtonSundayEvening.getId()) {
 //                calendar.add(Calendar.DAY_OF_MONTH, 6);
-//                entry = dataHolder.findHuPlaEntryByCalendar(calendar, HuPlaTime.EVENING);
+//                entry = dataHolder.findEntryByCalendar(calendar, HuPlaTime.EVENING);
 //                dataSource.setHuPlaTypeForEntry(entry, huPlaType, HuPlaTime.EVENING, calendar);
 //            }
 
@@ -413,8 +415,97 @@ public class WeekFragment extends Fragment implements View.OnClickListener, Popu
         endDate.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
     }
 
+    private void setMealText(TextView textView, DatabaseEntry entry) {
+        if(entry != null) {
+            textView.setText(entry.getMeal());
+            textView.setTextColor(Color.BLACK);
+        } else {
+            Resources res = getResources();
+            textView.setText(res.getString(R.string.missing_meal));
+            textView.setTextColor(Color.RED);
+        }
+    }
+
     public void updateEntries() {
-        // TODO
+        DataHolder dataHolder = DataHolder.getInstance();
+        GregorianCalendar tempCalendar = (GregorianCalendar) startDate.clone();
+
+        // Get entries for monday and set the image button images
+        DatabaseEntry mondayBreakfastEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.BREAKFAST);
+        setMealText(textViewMondayBreakfast, mondayBreakfastEntry);
+
+        DatabaseEntry mondayLunchEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.LUNCH);
+        setMealText(textViewMondayLunch, mondayLunchEntry);
+
+        DatabaseEntry mondayDinnerEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.DINNER);
+        setMealText(textViewMondayDinner, mondayDinnerEntry);
+
+        // Get entries for tuesday and set the image button images
+        tempCalendar.add(Calendar.DAY_OF_MONTH, 1);
+        DatabaseEntry tuesdayBreakfastEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.BREAKFAST);
+        setMealText(textViewTuesdayBreakfast, tuesdayBreakfastEntry);
+
+        DatabaseEntry tuesdayLunchEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.LUNCH);
+        setMealText(textViewTuesdayLunch, tuesdayLunchEntry);
+
+        DatabaseEntry tuesdayDinnerEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.DINNER);
+        setMealText(textViewTuesdayDinner, tuesdayDinnerEntry);
+
+        // Get entries for wednesday and set the image button images
+        tempCalendar.add(Calendar.DAY_OF_MONTH, 1);
+        DatabaseEntry wednesdayBreakfastEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.BREAKFAST);
+        setMealText(textViewWednesdayBreakfast, wednesdayBreakfastEntry);
+
+        DatabaseEntry wednesdayLunchEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.LUNCH);
+        setMealText(textViewWednesdayLunch, wednesdayLunchEntry);
+
+        DatabaseEntry wednesdayDinnerEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.DINNER);
+        setMealText(textViewWednesdayDinner, wednesdayDinnerEntry);
+
+        // Get entries for thursday and set the image button images
+        tempCalendar.add(Calendar.DAY_OF_MONTH, 1);
+        DatabaseEntry thursdayBreakfastEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.BREAKFAST);
+        setMealText(textViewThursdayBreakfast, thursdayBreakfastEntry);
+
+        DatabaseEntry thursdayLunchEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.LUNCH);
+        setMealText(textViewThursdayLunch, thursdayLunchEntry);
+
+        DatabaseEntry thursdayDinnerEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.DINNER);
+        setMealText(textViewThursdayDinner, thursdayDinnerEntry);
+
+        // Get entries for friday and set the image button images
+        tempCalendar.add(Calendar.DAY_OF_MONTH, 1);
+        DatabaseEntry fridayBreakfastEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.BREAKFAST);
+        setMealText(textViewFridayBreakfast, fridayBreakfastEntry);
+
+        DatabaseEntry fridayLunchEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.LUNCH);
+        setMealText(textViewFridayLunch, fridayLunchEntry);
+
+        DatabaseEntry fridayDinnerEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.DINNER);
+        setMealText(textViewFridayDinner, fridayDinnerEntry);
+
+
+        // Get entries for saturday and set the image button images
+        tempCalendar.add(Calendar.DAY_OF_MONTH, 1);
+        DatabaseEntry saturdayBreakfastEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.BREAKFAST);
+        setMealText(textViewSaturdayBreakfast, saturdayBreakfastEntry);
+
+        DatabaseEntry saturdayLunchEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.LUNCH);
+        setMealText(textViewSaturdayLunch, saturdayLunchEntry);
+
+        DatabaseEntry saturdayDinnerEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.DINNER);
+        setMealText(textViewSaturdayDinner, saturdayDinnerEntry);
+
+        // Get entries for sunday and set the image button images
+        tempCalendar.add(Calendar.DAY_OF_MONTH, 1);
+        DatabaseEntry sundayBreakfastEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.BREAKFAST);
+        setMealText(textViewSundayBreakfast, sundayBreakfastEntry);
+
+        DatabaseEntry sundayLunchEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.LUNCH);
+        setMealText(textViewSundayLunch, sundayLunchEntry);
+
+        DatabaseEntry sundayDinnerEntry = dataHolder.findEntryByDate(tempCalendar.get(Calendar.YEAR), tempCalendar.get(Calendar.MONTH), tempCalendar.get(Calendar.DAY_OF_MONTH), MealTime.DINNER);
+        setMealText(textViewSundayDinner, sundayDinnerEntry);
     }
 
 
