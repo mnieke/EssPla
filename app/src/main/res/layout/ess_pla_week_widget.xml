@@ -1,58 +1,351 @@
- <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@android:drawable/screen_background_light_transparent" >
+
+    <!-- Monday -->
+
+    <LinearLayout
+        android:id="@+id/linear_layout_week_widget_monday"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/widget_margin">
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-     <TableLayout
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:stretchColumns="1">
+        <TextView
+            android:id="@+id/text_view_week_widget_monday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/monday"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_monday_breakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_monday_lunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_monday_dinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
 
 
-         <TableRow>
+    <!-- Tuesday -->
 
-         <TextView
-             android:id="@+id/text_view_week_widget_monday"
-             android:layout_width="0dip"
-             android:layout_height="wrap_content"
-             android:padding="5dp"
-             android:layout_margin="4dip"
-             android:layout_weight="1"
-             android:text="@string/monday_long"  />
-         </TableRow>
+    <LinearLayout
+        android:id="@+id/linear_layout_week_widget_tuesday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linear_layout_week_widget_monday">
 
-         <TableRow>
-             <!-- Column 1 -->
-             <TextView
-                 android:id="@+id/text_view_week_widget_monday_breakfast"
-                 android:layout_width="0dip"
-                 android:layout_height="wrap_content"
-                 android:padding="5dip"
-                 android:layout_margin="4dip"
-                 android:layout_weight="1"
-                 android:text="Column 1" />
+        <TextView
+            android:id="@+id/text_view_week_widget_tuesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tuesday"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
 
-             <!-- Column 2 -->
-             <TextView
-                 android:id="@+id/text_view_week_widget_monday_lunch"
-                 android:layout_width="0dip"
-                 android:layout_height="wrap_content"
-                 android:padding="5dip"
-                 android:layout_margin="4dip"
-                 android:layout_weight="1"
-                 android:text="Column 2" />
+        <TextView
+            android:id="@+id/text_view_week_widget_tuesday_breakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
 
-             <!-- Column 3 -->
-             <TextView
-                 android:id="@+id/text_view_week_widget_monday_dinner"
-                 android:layout_width="0dip"
-                 android:layout_height="wrap_content"
-                 android:padding="5dip"
-                 android:layout_margin="4dip"
-                 android:layout_weight="1"
-                 android:text="Column 3" />
-         </TableRow>
-     </TableLayout>
+        <TextView
+            android:id="@+id/text_view_week_widget_tuesday_lunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
 
- </ScrollView>
+        <TextView
+            android:id="@+id/text_view_week_widget_tuesday_dinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+
+
+    <!-- Wednesday -->
+
+    <LinearLayout
+        android:id="@+id/linear_layout_week_widget_wednesday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linear_layout_week_widget_tuesday">
+
+        <TextView
+            android:id="@+id/text_view_week_widget_wednesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wednesday"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_wednesday_breakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_wednesday_lunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_wednesday_dinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+
+
+    <!-- Thursday -->
+
+    <LinearLayout
+        android:id="@+id/linear_layout_week_widget_thursday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linear_layout_week_widget_wednesday">
+
+        <TextView
+            android:id="@+id/text_view_week_widget_thursday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/thursday"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_thursday_breakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_thursday_lunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_thursday_dinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+
+
+    <!-- Friday -->
+
+    <LinearLayout
+        android:id="@+id/linear_layout_week_widget_friday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linear_layout_week_widget_thursday">
+
+        <TextView
+            android:id="@+id/text_view_week_widget_friday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/friday"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_friday_breakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_friday_lunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_friday_dinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+
+
+    <!-- Saturday -->
+
+    <LinearLayout
+        android:id="@+id/linear_layout_week_widget_saturday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linear_layout_week_widget_friday">
+
+        <TextView
+            android:id="@+id/text_view_week_widget_saturday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/saturday"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_friday_saturday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_saturday_lunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_saturday_dinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+
+
+    <!-- Saturday -->
+
+    <LinearLayout
+        android:id="@+id/linear_layout_week_widget_sunday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linear_layout_week_widget_saturday">
+
+        <TextView
+            android:id="@+id/text_view_week_widget_sunday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sunday"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_friday_sunday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_sunday_lunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/text_view_week_widget_sunday_dinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/missing_meal"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
