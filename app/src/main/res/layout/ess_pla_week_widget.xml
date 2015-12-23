@@ -21,8 +21,10 @@
             android:text="@string/monday"
             android:textStyle="bold"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_monday_breakfast"
@@ -30,8 +32,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_monday_lunch"
@@ -39,8 +43,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_monday_dinner"
@@ -48,8 +54,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
     </LinearLayout>
 
 
@@ -70,8 +78,10 @@
             android:text="@string/tuesday"
             android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_tuesday_breakfast"
@@ -79,8 +89,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_tuesday_lunch"
@@ -88,8 +100,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_tuesday_dinner"
@@ -97,8 +111,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
     </LinearLayout>
 
 
@@ -119,8 +135,10 @@
             android:text="@string/wednesday"
             android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_wednesday_breakfast"
@@ -128,8 +146,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_wednesday_lunch"
@@ -137,8 +157,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_wednesday_dinner"
@@ -146,8 +168,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
     </LinearLayout>
 
 
@@ -168,8 +192,10 @@
             android:text="@string/thursday"
             android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_thursday_breakfast"
@@ -177,8 +203,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_thursday_lunch"
@@ -186,8 +214,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_thursday_dinner"
@@ -195,8 +225,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
     </LinearLayout>
 
 
@@ -217,8 +249,10 @@
             android:text="@string/friday"
             android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_friday_breakfast"
@@ -226,8 +260,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_friday_lunch"
@@ -235,8 +271,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_friday_dinner"
@@ -244,8 +282,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
     </LinearLayout>
 
 
@@ -266,8 +306,10 @@
             android:text="@string/saturday"
             android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_saturday_breakfast"
@@ -275,8 +317,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp" />
 
         <TextView
             android:id="@+id/text_view_week_widget_saturday_lunch"
@@ -284,8 +328,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_saturday_dinner"
@@ -293,8 +339,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
     </LinearLayout>
 
 
@@ -315,8 +363,10 @@
             android:text="@string/sunday"
             android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_sunday_breakfast"
@@ -324,8 +374,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_sunday_lunch"
@@ -333,8 +385,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_sunday_dinner"
@@ -342,8 +396,10 @@
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp"
+            android:layout_margin="2dp"/>
     </LinearLayout>
 
 

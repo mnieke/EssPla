@@ -8,7 +8,7 @@
     <EditText
         android:id="@+id/edit_text_popup"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:editable="true"
         android:inputType="text"
         android:focusable="true"
