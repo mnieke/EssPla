@@ -19,4 +19,13 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="missing_meal">Meal needed!</string>
+
+    <string name="monday_long">Monday</string>
+    <string name="tuesday_long">Tuesday</string>
+    <string name="wednesday_long">Wednesday</string>
+    <string name="thursday_long">Thursday</string>
+    <string name="friday_long">Friday</string>
+    <string name="saturday_long">Saturday</string>
+    <string name="sunday_long">Sunday</string>
+
 </resources>
