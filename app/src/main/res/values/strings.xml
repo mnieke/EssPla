@@ -18,7 +18,7 @@
     <string name="empty">Empty</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
-    <string name="missing_meal">Meal needed!</string>
+    <string name="missing_meal">\?</string>
 
     <string name="monday_long">Monday</string>
     <string name="tuesday_long">Tuesday</string>

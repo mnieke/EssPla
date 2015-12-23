@@ -388,6 +388,11 @@ public class WeekFragment extends Fragment implements View.OnClickListener, Popu
                     EditText editText = (EditText) popupView.findViewById(R.id.edit_text_popup);
                     editText.setText(textView.getText());
 
+                    String currentText = textView.getText().toString();
+                    if(currentText.equals("?")) {
+                        currentText = "";
+                    }
+
                     PopupWindowHandler popupWindowHandler = new PopupWindowHandler(editText, (Button) popupView.findViewById(R.id.button_popup_ok), (Button) popupView.findViewById(R.id.button_popup_cancel), this, textView.getText().toString());
 
                     popupWindow.showAtLocation(rootView, Gravity.CENTER, 0, 0);

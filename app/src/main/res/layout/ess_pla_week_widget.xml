@@ -7,7 +7,8 @@
 
     <!-- Monday -->
 
-    <LinearLayout
+
+    <RelativeLayout
         android:id="@+id/linear_layout_week_widget_monday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,6 +16,7 @@
         android:layout_alignParentStart="true">
 
         <TextView
+            android:minWidth="35dp"
             android:id="@+id/text_view_week_widget_monday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,46 +26,61 @@
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+
 
         <TextView
             android:id="@+id/text_view_week_widget_monday_breakfast"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_monday"
+            android:layout_toEndOf="@+id/text_view_week_widget_monday"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_monday_lunch"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_monday_breakfast"
+            android:layout_toEndOf="@+id/text_view_week_widget_monday_breakfast"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_monday_dinner"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
-    </LinearLayout>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_monday_lunch"
+            android:layout_toEndOf="@+id/text_view_week_widget_monday_lunch"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
 
 
     <!-- Tuesday -->
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/linear_layout_week_widget_tuesday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,6 +91,7 @@
         <TextView
             android:id="@+id/text_view_week_widget_tuesday"
             android:layout_width="wrap_content"
+            android:minWidth="35dp"
             android:layout_height="wrap_content"
             android:text="@string/tuesday"
             android:textColor="@android:color/black"
@@ -81,46 +99,60 @@
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_tuesday_breakfast"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_tuesday"
+            android:layout_toEndOf="@+id/text_view_week_widget_tuesday" />
 
         <TextView
             android:id="@+id/text_view_week_widget_tuesday_lunch"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_centerInParent="true"
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_tuesday_breakfast"
+            android:layout_toEndOf="@+id/text_view_week_widget_tuesday_breakfast"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_tuesday_dinner"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
-    </LinearLayout>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_tuesday_lunch"
+            android:layout_toEndOf="@+id/text_view_week_widget_tuesday_lunch"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
 
 
     <!-- Wednesday -->
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/linear_layout_week_widget_wednesday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -131,6 +163,7 @@
         <TextView
             android:id="@+id/text_view_week_widget_wednesday"
             android:layout_width="wrap_content"
+            android:minWidth="35dp"
             android:layout_height="wrap_content"
             android:text="@string/wednesday"
             android:textColor="@android:color/black"
@@ -138,46 +171,59 @@
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_wednesday_breakfast"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_wednesday"
+            android:layout_toEndOf="@+id/text_view_week_widget_wednesday"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_wednesday_lunch"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_wednesday_breakfast"
+            android:layout_toEndOf="@+id/text_view_week_widget_wednesday_breakfast"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_wednesday_dinner"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
-    </LinearLayout>
+            android:layout_margin="2dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/text_view_week_widget_wednesday_lunch"
+            android:layout_toEndOf="@+id/text_view_week_widget_wednesday_lunch"/>
+    </RelativeLayout>
 
 
     <!-- Thursday -->
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/linear_layout_week_widget_thursday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -188,6 +234,7 @@
         <TextView
             android:id="@+id/text_view_week_widget_thursday"
             android:layout_width="wrap_content"
+            android:minWidth="35dp"
             android:layout_height="wrap_content"
             android:text="@string/thursday"
             android:textColor="@android:color/black"
@@ -195,46 +242,59 @@
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_thursday_breakfast"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_thursday"
+            android:layout_toEndOf="@+id/text_view_week_widget_thursday"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_thursday_lunch"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_thursday_breakfast"
+            android:layout_toEndOf="@+id/text_view_week_widget_thursday_breakfast"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_thursday_dinner"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
-    </LinearLayout>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_thursday_lunch"
+            android:layout_toEndOf="@+id/text_view_week_widget_thursday_lunch"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
 
 
     <!-- Friday -->
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/linear_layout_week_widget_friday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -245,6 +305,7 @@
         <TextView
             android:id="@+id/text_view_week_widget_friday"
             android:layout_width="wrap_content"
+            android:minWidth="35dp"
             android:layout_height="wrap_content"
             android:text="@string/friday"
             android:textColor="@android:color/black"
@@ -252,46 +313,60 @@
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_friday_breakfast"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_friday"
+            android:layout_toEndOf="@+id/text_view_week_widget_friday"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_friday_lunch"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@+id/text_view_week_widget_friday_breakfast"
+            android:layout_toEndOf="@+id/text_view_week_widget_friday_breakfast"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_friday_dinner"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
-    </LinearLayout>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_friday_lunch"
+            android:layout_toEndOf="@+id/text_view_week_widget_friday_lunch"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
 
 
     <!-- Saturday -->
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/linear_layout_week_widget_saturday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -302,6 +377,7 @@
         <TextView
             android:id="@+id/text_view_week_widget_saturday"
             android:layout_width="wrap_content"
+            android:minWidth="35dp"
             android:layout_height="wrap_content"
             android:text="@string/saturday"
             android:textColor="@android:color/black"
@@ -309,46 +385,59 @@
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_saturday_breakfast"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp" />
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_saturday"
+            android:layout_toEndOf="@+id/text_view_week_widget_saturday"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_saturday_lunch"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_saturday_breakfast"
+            android:layout_toEndOf="@+id/text_view_week_widget_saturday_breakfast"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_saturday_dinner"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
-    </LinearLayout>
+            android:layout_margin="2dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/text_view_week_widget_saturday_lunch"
+            android:layout_toEndOf="@+id/text_view_week_widget_saturday_lunch"/>
+    </RelativeLayout>
 
 
     <!-- Saturday -->
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/linear_layout_week_widget_sunday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -359,6 +448,7 @@
         <TextView
             android:id="@+id/text_view_week_widget_sunday"
             android:layout_width="wrap_content"
+            android:minWidth="35dp"
             android:layout_height="wrap_content"
             android:text="@string/sunday"
             android:textColor="@android:color/black"
@@ -366,41 +456,54 @@
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_sunday_breakfast"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_sunday"
+            android:layout_toEndOf="@+id/text_view_week_widget_sunday"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_sunday_lunch"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_sunday_breakfast"
+            android:layout_toEndOf="@+id/text_view_week_widget_sunday_breakfast"/>
 
         <TextView
             android:id="@+id/text_view_week_widget_sunday_dinner"
             android:layout_width="wrap_content"
+            android:maxWidth="100dp"
             android:layout_height="wrap_content"
             android:text="@string/missing_meal"
             android:textColor="@android:color/black"
             android:paddingLeft="2dp"
             android:paddingRight="2dp"
             android:paddingTop="5dp"
-            android:layout_margin="2dp"/>
-    </LinearLayout>
+            android:layout_margin="2dp"
+            android:layout_toRightOf="@+id/text_view_week_widget_sunday_lunch"
+            android:layout_toEndOf="@+id/text_view_week_widget_sunday_lunch"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
 
 
 
