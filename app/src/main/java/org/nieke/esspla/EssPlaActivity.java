@@ -1,5 +1,8 @@
 package org.nieke.esspla;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v4.app.Fragment;
@@ -64,6 +67,17 @@ public class EssPlaActivity extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
 
+    }
+
+    @Override
+    public void onPause() {
+        Intent weekWidgetIntent = new Intent(this, EssPlaWeekWidget.class);
+        weekWidgetIntent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
+        int weekWidgetIds[] = AppWidgetManager.getInstance(getApplication()).getAppWidgetIds(new ComponentName(getApplication(), EssPlaWeekWidget.class));
+        weekWidgetIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, weekWidgetIds);
+        sendBroadcast(weekWidgetIntent);
+
+        super.onPause();
     }
 
 
